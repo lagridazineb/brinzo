@@ -1,0 +1,167 @@
+.tracking-body {
+  padding-top: var(--space-4);
+}
+
+.tracking-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.tracking-id {
+  font-size: 0.78rem;
+  color: var(--lagoon);
+  background: var(--rice-paper-deep);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.tracking-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-3);
+}
+
+.tracking-status__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 4px rgba(31, 122, 77, 0.18);
+}
+
+.tracking-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--paper-line);
+}
+
+.tracking-map__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tracking-card {
+  background: var(--white);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.tracking-card--row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tracking-service-icon {
+  font-size: 1.5rem;
+}
+
+.tracking-service-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.tracking-service-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.tracking-service-sub {
+  font-size: 0.78rem;
+  color: var(--muted-soft);
+  margin-top: 2px;
+}
+
+.tracking-price {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tracking-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* ── Order confirmed banner ── */
+.tracking-confirmed {
+  text-align: center;
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+  color: white;
+}
+
+.tracking-confirmed__icon {
+  font-size: 2.4rem;
+  margin-bottom: var(--space-2);
+}
+
+.tracking-confirmed__title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-1);
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+.tracking-confirmed__sub {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.82);
+  margin: 0;
+}
+
+/* ── Confirmation message card ── */
+.tracking-message {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tracking-message p {
+  margin: 0;
+}
+
+.tracking-msg-icon {
+  margin-right: 6px;
+}
+
+.tracking-message__notify {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.tracking-message__thanks {
+  font-weight: 600;
+  color: var(--backwater);
+  border-top: 1px solid var(--paper-line);
+  padding-top: var(--space-3);
+}
+
+/* ── Item photo on tracking ── */
+.tracking-item-img {
+  display: flex;
+  flex-direction: column;
+}
+
+.tracking-item-img__img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}

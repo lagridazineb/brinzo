@@ -1,0 +1,53 @@
+.matching-body {
+  align-items: center;
+  text-align: center;
+  padding-top: var(--space-9);
+}
+
+.matching-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--turmeric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.matching-avatar__emoji {
+  font-size: 3rem;
+}
+
+.matching-label {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.matching-title {
+  font-size: 1.6rem;
+  margin-top: 4px;
+  margin-bottom: var(--space-5);
+  text-transform: capitalize;
+}
+
+.matching-progress {
+  width: 100%;
+  height: 6px;
+  background: var(--paper-line);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.matching-progress__fill {
+  height: 100%;
+  background: var(--backwater);
+  border-radius: var(--radius-pill);
+  transition: width 0.4s ease;
+}
+
+.matching-route {
+  font-size: 0.82rem;
+  color: var(--lagoon);
+}

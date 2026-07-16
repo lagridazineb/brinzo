@@ -1,0 +1,314 @@
+{
+  "bookings": {
+    "BNZIXWRDS0726": {
+      "id": "BNZIXWRDS0726",
+      "pickup": {
+        "description": "Kannur Town, Kannur, Kerala",
+        "category": "Area",
+        "lat": 11.8745,
+        "lng": 75.3704
+      },
+      "drop": {
+        "description": "SM Street, Kannur Town",
+        "category": "Street",
+        "lat": 11.873,
+        "lng": 75.371
+      },
+      "item": {
+        "description": "",
+        "itemType": "Pharmacy & Healthcare",
+        "imageUrl": "/uploads/bF3eyRKmvbd6.png",
+        "imageName": "ChatGPT Image Jun 15, 2026, 12_36_21 PM.png",
+        "size": "small",
+        "weight": "",
+        "recipientName": "zzizo",
+        "recipientPhone": "8089118428",
+        "notes": ""
+      },
+      "distanceKm": 0.17911563841918002,
+      "charge": 50,
+      "payment": "cash",
+      "phone": "8089118428",
+      "createdAt": "2026-07-01T12:06:40.726Z",
+      "whatsapp": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN"
+      },
+      "email": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: EMAIL_HOST, EMAIL_USER, EMAIL_PASS, ADMIN_EMAIL"
+      }
+    },
+    "BNZTFDXR60889": {
+      "id": "BNZTFDXR60889",
+      "pickup": {
+        "description": "Kannur Town, Kannur, Kerala",
+        "category": "Area",
+        "lat": 11.8745,
+        "lng": 75.3704
+      },
+      "drop": {
+        "description": "Payyambalam Beach, Kannur",
+        "category": "Landmark",
+        "lat": 11.8836,
+        "lng": 75.3633
+      },
+      "item": {
+        "description": "",
+        "itemType": "Food & Restaurants",
+        "imageUrl": null,
+        "imageName": null,
+        "size": "small",
+        "weight": "",
+        "recipientName": "test3",
+        "recipientPhone": "8089118428",
+        "notes": ""
+      },
+      "distanceKm": 1.2730920302667472,
+      "charge": 50,
+      "payment": "cash",
+      "phone": "8089118428",
+      "idempotencyKey": "00e24eef-02ba-48cf-8d76-aa68335ae4b7",
+      "createdAt": "2026-07-02T11:57:20.889Z",
+      "whatsapp": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN"
+      },
+      "email": {
+        "attempted": true,
+        "ok": true
+      },
+      "callmebot": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: CALLMEBOT_APIKEY"
+      }
+    },
+    "BNZXHXRG87680": {
+      "id": "BNZXHXRG87680",
+      "pickup": {
+        "description": "Kannur Town, Kannur, Kerala",
+        "category": "Area",
+        "lat": 11.8745,
+        "lng": 75.3704
+      },
+      "drop": {
+        "description": "Fort Road, Kannur",
+        "category": "Street",
+        "lat": 11.87,
+        "lng": 75.368
+      },
+      "item": {
+        "description": "",
+        "itemType": "Meat, Fish & Poultry",
+        "imageUrl": "/uploads/XcdpeHth-D5Z.png",
+        "imageName": "ChatGPT Image Jun 15, 2026, 12_36_21 PM.png",
+        "size": "small",
+        "weight": "",
+        "recipientName": "test4",
+        "recipientPhone": "8089118428",
+        "notes": ""
+      },
+      "distanceKm": 0.5644301835758697,
+      "charge": 50,
+      "payment": "cash",
+      "phone": "8089118428",
+      "idempotencyKey": "ae7024f9-096d-4501-981f-02d91eff38d9",
+      "createdAt": "2026-07-02T11:59:57.680Z",
+      "whatsapp": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN"
+      },
+      "email": {
+        "attempted": true,
+        "ok": true
+      },
+      "callmebot": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: CALLMEBOT_APIKEY"
+      }
+    },
+    "BNZ0EJAGZ8816": {
+      "id": "BNZ0EJAGZ8816",
+      "pickup": {
+        "description": "Kannur Town, Kannur, Kerala",
+        "category": "Area",
+        "lat": 11.8745,
+        "lng": 75.3704
+      },
+      "drop": {
+        "description": "Fort Road, Kannur",
+        "category": "Street",
+        "lat": 11.87,
+        "lng": 75.368
+      },
+      "item": {
+        "description": "",
+        "itemType": "Pharmacy & Healthcare",
+        "imageUrl": "/uploads/TSW-RMLpdev-.png",
+        "imageName": "ChatGPT Image Jun 15, 2026, 12_36_21 PM.png",
+        "size": "small",
+        "weight": "",
+        "recipientName": "bla",
+        "recipientPhone": "8089118428",
+        "notes": ""
+      },
+      "distanceKm": 0.5644301835758697,
+      "charge": 50,
+      "payment": "cash",
+      "phone": "8089118428",
+      "idempotencyKey": "075284cd-3c42-446e-a40a-cc8b42e4a9a7",
+      "createdAt": "2026-07-02T12:47:28.816Z",
+      "whatsapp": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN"
+      },
+      "email": {
+        "attempted": true,
+        "ok": true
+      },
+      "callmebot": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: CALLMEBOT_APIKEY"
+      }
+    },
+    "BNZABFOIQ0451": {
+      "id": "BNZABFOIQ0451",
+      "pickup": {
+        "description": "Kannur District Collectorate, Kannur",
+        "category": "Office",
+        "lat": 11.8712,
+        "lng": 75.373
+      },
+      "drop": {
+        "description": "Aster MIMS Hospital, Kannur",
+        "category": "Hospital",
+        "lat": 11.8858,
+        "lng": 75.361
+      },
+      "item": {
+        "description": "",
+        "itemType": "Grocery & Supermarket",
+        "imageUrl": null,
+        "imageName": null,
+        "size": "large",
+        "weight": "",
+        "recipientName": "com",
+        "recipientPhone": "8089118428",
+        "notes": ""
+      },
+      "distanceKm": 2.9,
+      "charge": 80,
+      "payment": "cash",
+      "phone": "8089118428",
+      "idempotencyKey": "75f6ef8e-2535-44f5-86f7-175327b1b502",
+      "createdAt": "2026-07-02T16:35:20.451Z"
+    },
+    "BNZSBUKNW1111": {
+      "id": "BNZSBUKNW1111",
+      "pickup": {
+        "description": "Kannur Railway Station, Kannur",
+        "category": "Transit",
+        "lat": 11.8689,
+        "lng": 75.3789
+      },
+      "drop": {
+        "description": "Eachur Bazaar, Kannur",
+        "category": "Market",
+        "lat": 11.9378,
+        "lng": 75.3598
+      },
+      "item": {
+        "description": "",
+        "itemType": "Bakery & Cakes",
+        "imageUrl": null,
+        "imageName": null,
+        "size": "small",
+        "weight": "",
+        "recipientName": "bilal",
+        "recipientPhone": "8089118428",
+        "notes": ""
+      },
+      "distanceKm": 11.1,
+      "charge": 200,
+      "payment": "cash",
+      "phone": "8089118428",
+      "idempotencyKey": "472efefc-e6da-44fd-b197-3f59a57fa32f",
+      "createdAt": "2026-07-02T16:36:31.111Z",
+      "whatsapp": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN"
+      },
+      "email": {
+        "attempted": true,
+        "ok": true
+      },
+      "callmebot": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: CALLMEBOT_APIKEY"
+      }
+    },
+    "BNZXG2DCR9614": {
+      "id": "BNZXG2DCR9614",
+      "pickup": {
+        "description": "Mother and Child Hospital, To caltex circle, Talap, Kannur - 670002, KL, India",
+        "lat": 11.877058,
+        "lng": 75.376159
+      },
+      "drop": {
+        "description": "Thavakkara, Kannur",
+        "category": "Area",
+        "lat": 11.873,
+        "lng": 75.378
+      },
+      "item": {
+        "description": "",
+        "itemType": "Food & Restaurants",
+        "imageUrl": null,
+        "imageName": null,
+        "size": "small",
+        "weight": "",
+        "recipientName": "test100",
+        "recipientPhone": "8089118428",
+        "notes": ""
+      },
+      "distanceKm": 1.773,
+      "charge": 50,
+      "payment": "cash",
+      "phone": "8089118428",
+      "idempotencyKey": "d82d5f36-30fd-4206-aeeb-75fa4d3f5f84",
+      "createdAt": "2026-07-05T05:04:49.614Z",
+      "whatsapp": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN"
+      },
+      "email": {
+        "attempted": true,
+        "ok": true
+      },
+      "callmebot": {
+        "attempted": false,
+        "ok": false,
+        "error": "Not configured. Missing: CALLMEBOT_APIKEY"
+      }
+    }
+  },
+  "idempotencyKeys": {
+    "00e24eef-02ba-48cf-8d76-aa68335ae4b7": "BNZTFDXR60889",
+    "ae7024f9-096d-4501-981f-02d91eff38d9": "BNZXHXRG87680",
+    "075284cd-3c42-446e-a40a-cc8b42e4a9a7": "BNZ0EJAGZ8816",
+    "75f6ef8e-2535-44f5-86f7-175327b1b502": "BNZABFOIQ0451",
+    "472efefc-e6da-44fd-b197-3f59a57fa32f": "BNZSBUKNW1111",
+    "d82d5f36-30fd-4206-aeeb-75fa4d3f5f84": "BNZXG2DCR9614"
+  }
+}

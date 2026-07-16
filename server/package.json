@@ -1,0 +1,21 @@
+{
+  "name": "brinzo-server",
+  "version": "1.0.0",
+  "description": "BRINZO backend - item image upload + WhatsApp order notifications",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "nanoid": "^5.1.16",
+    "nodemailer": "^6.9.16",
+    "resend": "^4.0.1"
+  }
+}

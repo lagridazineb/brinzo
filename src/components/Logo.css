@@ -1,0 +1,19 @@
+.brinzo-logo__link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.brinzo-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brinzo-logo__img {
+  display: block;
+  object-fit: contain;
+}
+
+/* Size variants — control image height */
+.brinzo-logo--sm  .brinzo-logo__img { height: 36px; }
+.brinzo-logo--md  .brinzo-logo__img { height: 48px; }
+.brinzo-logo--lg  .brinzo-logo__img { height: 64px; }

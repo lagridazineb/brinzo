@@ -1,0 +1,89 @@
+.route-line {
+  display: flex;
+}
+
+/* Vertical (used inside cards: locations summary, item form, etc.) */
+.route-line--vertical {
+  align-items: stretch;
+  gap: var(--space-3);
+}
+
+.route-line__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.route-line__curve-v {
+  flex: 1;
+  width: 24px;
+  min-height: 36px;
+}
+
+.route-line--compact .route-line__curve-v {
+  min-height: 20px;
+}
+
+.route-line__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--paper-line);
+}
+
+.route-line__dot--pickup {
+  background: var(--lagoon);
+}
+
+.route-line__dot--drop {
+  background: var(--clay);
+  border-radius: 3px;
+}
+
+.route-line__labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-1) 0;
+}
+
+.route-line__label {
+  font-size: 0.95rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Horizontal (used in hero) */
+.route-line--horizontal {
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.route-line__pin {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.route-line__curve {
+  flex: 1;
+  height: 24px;
+  min-width: 60px;
+}
+
+.route-line--horizontal .route-line__label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--backwater);
+  font-weight: 500;
+}

@@ -1,0 +1,47 @@
+.locations-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--paper-line);
+  padding: var(--space-2);
+  margin-top: var(--space-3);
+  position: relative;
+  z-index: 10;
+}
+
+.locations-card .location-input {
+  border: none;
+  padding: 14px 12px;
+}
+
+.locations-divider {
+  height: 1px;
+  background: var(--paper-line);
+  margin: 0 var(--space-3);
+}
+
+.locations-hint {
+  font-size: 0.85rem;
+  color: var(--muted-soft);
+  margin-top: var(--space-4);
+  line-height: 1.5;
+}
+
+.locations-spacer {
+  flex: 1;
+  min-height: var(--space-6);
+}
+
+/* Location Map */
+.location-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--paper-line);
+  margin-top: var(--space-4);
+}
+
+.location-map__svg {
+  width: 100%;
+  display: block;
+}

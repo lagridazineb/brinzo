@@ -1,0 +1,63 @@
+.flow-header {
+  position: sticky;
+  top: 0;
+  background: var(--rice-paper);
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  z-index: 20;
+  border-bottom: 1px solid transparent;
+}
+
+.flow-header__back {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--paper-line);
+  background: var(--white);
+  font-size: 1.1rem;
+  color: var(--backwater);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.flow-header__back:hover { border-color: var(--lagoon); }
+
+.flow-header__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.flow-header__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.flow-header__step {
+  font-size: 0.72rem;
+  color: var(--lagoon);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.flow-header__progress {
+  width: 100%;
+  height: 4px;
+  background: var(--paper-line);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  order: 3;
+}
+
+.flow-header__progress-fill {
+  height: 100%;
+  background: var(--clay);
+  border-radius: var(--radius-pill);
+  transition: width 0.3s ease;
+}

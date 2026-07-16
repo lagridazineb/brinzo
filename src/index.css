@@ -1,0 +1,158 @@
+/* ============================================
+   BRINZO — Design Tokens
+   Built directly from the official brand guideline
+   sheet: Navy Blue, Brinzo Orange, Light Gray,
+   Dark Gray, White. Poppins for display, Inter
+   for body — bold, confident, fast.
+   ============================================ */
+
+:root {
+  /* ── Brand palette (verbatim from brand sheet) ── */
+  --navy: #0d1b2a;            /* primary — trust, reliability, professionalism */
+  --navy-light: #16273b;
+  --navy-deep: #081420;
+  --orange: #ff6a00;          /* accent — energy, speed, can-do attitude */
+  --orange-dark: #e25c00;
+  --light-gray: #f2f4f7;      /* surfaces / backgrounds */
+  --dark-gray: #222831;       /* secondary text */
+  --white: #ffffff;
+
+  /* ── Semantic aliases (kept so every existing page
+     component — Button, RouteLine, LocationInput, etc.
+     — inherits the new brand without per-file edits) ── */
+  --ink: #0d1b2a;              /* primary text = navy */
+  --backwater: #0d1b2a;        /* primary brand color */
+  --backwater-light: #16273b;
+  --backwater-deep: #081420;
+  --lagoon: #1a3a52;           /* secondary accent — muted steel-navy */
+  --clay: #ff6a00;             /* CTA / accent = brinzo orange */
+  --clay-dark: #e25c00;
+  --turmeric: #ff6a00;         /* highlight = orange (no separate gold in brand sheet) */
+  --rice-paper: #f7f8fa;       /* page background — near-white, cool */
+  --rice-paper-deep: #f2f4f7;  /* brand sheet's "light gray" */
+  --paper-line: #e2e6ec;       /* hairline / dividers */
+  --muted: #5b6472;            /* secondary text on white */
+  --muted-soft: #8a93a3;       /* tertiary / placeholder text */
+  --error: #c8372b;
+  --success: #1f7a4d;
+
+  /* Tinted surfaces (navy/orange washes, replacing old green/terracotta tints) */
+  --navy-tint: #eef2f7;
+  --navy-tint-border: #d7e0ea;
+  --orange-tint: #fff1e6;
+  --orange-tint-border: #ffd9b8;
+  --gold-tint: #fff8e6;       /* kept for sandbox/info notices */
+  --gold-tint-border: #f2c14e;
+
+  /* Type — Poppins for display/headings, Inter for body, per brand sheet */
+  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "SF Mono", "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  /* Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(13, 27, 42, 0.06), 0 8px 28px rgba(13, 27, 42, 0.09);
+  --shadow-float: 0 6px 20px rgba(255, 106, 0, 0.28);
+  --shadow-navy: 0 10px 30px rgba(13, 27, 42, 0.35);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--rice-paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--orange-tint-border);
+  color: var(--navy);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Utility: mono digits for prices/codes */
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Scrollbar — subtle, on-brand */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--paper-line);
+  border-radius: 10px;
+}
