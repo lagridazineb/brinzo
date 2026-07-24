@@ -5,12 +5,15 @@ import FlowHeader from "../components/FlowHeader";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
 import { useBooking } from "../context/BookingContext";
+import { sendOtp } from "../utils/api";
 import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
   const { booking, setPhone } = useBooking();
   const [value, setValue] = useState("");
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (!booking.service) {
@@ -21,10 +24,29 @@ export default function Login() {
 
   const valid = /^[6-9]\d{9}$/.test(value);
 
-  function handleGetOtp() {
-    if (!valid) return;
-    setPhone(value);
-    navigate("/otp");
+  async function handleGetOtp() {
+    if (!valid || sending) return;
+    setError("");
+    setSending(true);
+    try {
+      await sendOtp(value);
+      setPhone(value);
+      navigate("/otp");
+    } catch (err) {
+      if (err.message === "OTP_NOT_CONFIGURED") {
+        // Backend has no FAST2SMS_API_KEY set yet — let the customer
+        // through anyway so you can still demo/test the flow, but the
+        // Otp page falls back to its demo code (123456) in this case.
+        setPhone(value);
+        navigate("/otp");
+      } else if (err.message === "COOLDOWN") {
+        setError("Please wait a bit before requesting another code.");
+      } else {
+        setError("Couldn't send the code. Check your number and try again.");
+      }
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -52,14 +74,16 @@ export default function Login() {
           />
         </div>
 
+        {error && <p className="otp-error">{error}</p>}
+
         <div className="locations-spacer" />
 
         <p className="login-terms">
           By continuing, you agree to Brinzo's <a href="#terms">T&amp;C</a>
         </p>
 
-        <Button variant="dark" size="lg" full disabled={!valid} onClick={handleGetOtp}>
-          Get OTP
+        <Button variant="dark" size="lg" full disabled={!valid || sending} onClick={handleGetOtp}>
+          {sending ? "Sending…" : "Get OTP"}
         </Button>
       </div>
     </PageShell>
