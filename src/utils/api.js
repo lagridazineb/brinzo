@@ -95,6 +95,25 @@ export async function getBooking(id) {
   return request(`/api/bookings/${id}`);
 }
 
+// ---------------- Phone login OTP ----------------
+export async function sendOtp(phone) {
+  return request("/api/otp/send", {
+    method: "POST",
+    body: JSON.stringify({ phone }),
+  });
+}
+
+export async function verifyOtp(phone, code) {
+  return request("/api/otp/verify", {
+    method: "POST",
+    body: JSON.stringify({ phone, code }),
+  });
+}
+
+export async function getHealth() {
+  return request("/api/health");
+}
+
 // Google Places search (proxied through our own backend — see
 // server/places.js). Returns [] if the backend has no key configured
 // or the request fails; callers should treat that as "try the free
