@@ -46,6 +46,12 @@
   letter-spacing: 0.03em;
 }
 
+.otp-error {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-3);
+}
+
 .login-terms {
   text-align: center;
   font-size: 0.82rem;
