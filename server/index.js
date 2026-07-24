@@ -1,13 +1,3 @@
-// index.js
-// ---------------------------------------------------------------
-// BRINZO backend. Two jobs:
-//   1. Item image upload (stored on local disk, served back over HTTP
-//      so the frontend can preview it, and so this server can read
-//      the file again when forwarding it to WhatsApp)
-//   2. Booking creation -> formats the order message -> sends it
-//      (and the item photo, if any) to your WhatsApp number via the
-//      Meta WhatsApp Cloud API
-// ---------------------------------------------------------------
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
@@ -23,6 +13,7 @@ import { sendCallMeBotMessage, isCallMeBotConfigured, callMeBotConfigStatus } fr
 import { formatOrderMessage } from "./formatMessage.js";
 import { loginAdmin, logoutAdmin, verifyToken, requireAdmin, isAdminConfigured } from "./auth.js";
 import { searchGooglePlaces, isConfigured as isGooglePlacesConfigured, configStatus as googlePlacesConfigStatus } from "./places.js";
+import { sendOtp, verifyOtp, isOtpConfigured, otpConfigStatus } from "./otp.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const UPLOADS_DIR = path.join(__dirname, "uploads");
@@ -98,6 +89,38 @@ app.post("/api/admin/logout", (req, res) => {
 
 app.get("/api/admin/me", requireAdmin, (req, res) => {
   res.json({ ok: true, username: req.admin.username });
+});
+
+// ---------------- Phone login OTP (via Fast2SMS) ----------------
+app.post("/api/otp/send", async (req, res) => {
+  const { phone } = req.body || {};
+  try {
+    const result = await sendOtp(phone);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    const message = err.message || "";
+    if (message === "INVALID_PHONE") {
+      return res.status(400).json({ ok: false, error: "INVALID_PHONE" });
+    }
+    if (message === "COOLDOWN") {
+      return res.status(429).json({ ok: false, error: "COOLDOWN" });
+    }
+    if (message.startsWith("OTP_NOT_CONFIGURED")) {
+      console.warn(`[OTP] ${message}`);
+      return res.status(503).json({ ok: false, error: "OTP_NOT_CONFIGURED", detail: message });
+    }
+    console.error("[OTP] Failed to send:", message);
+    res.status(502).json({ ok: false, error: "SEND_FAILED", detail: message });
+  }
+});
+
+app.post("/api/otp/verify", (req, res) => {
+  const { phone, code } = req.body || {};
+  const result = verifyOtp(phone, code);
+  if (!result.ok) {
+    return res.status(400).json({ ok: false, error: result.error });
+  }
+  res.json({ ok: true });
 });
 
 // ---------------- Bookings (-> WhatsApp + Email) ----------------
@@ -256,6 +279,7 @@ app.get("/api/health", (_req, res) => {
     whatsapp: configStatus(),
     callmebot: callMeBotConfigStatus(),
     email: emailConfigStatus(),
+    otp: otpConfigStatus(),
     googlePlaces: googlePlacesConfigStatus(),
     adminConfigured: isAdminConfigured(),
   });
@@ -291,7 +315,14 @@ app.listen(PORT, () => {
       : "Admin login: NOT configured — set ADMIN_USERNAME / ADMIN_PASSWORD in server/.env"
   );
 
-  if (!waStatus.configured || !emailStatus.configured || !isAdminConfigured()) {
+  const otpStatus = otpConfigStatus();
+  console.log(
+    otpStatus.configured
+      ? "OTP (Fast2SMS): configured ✅"
+      : `OTP (Fast2SMS): NOT configured — missing ${otpStatus.missing.join(", ")}`
+  );
+
+  if (!waStatus.configured || !emailStatus.configured || !isAdminConfigured() || !otpStatus.configured) {
     console.log("See server/.env.example to set these up.");
   }
 });
